@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CommandTable xmlns="http://schemas.microsoft.com/VisualStudio/2005-10-18/CommandTable" 
+			  xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <Extern href="stdidcmd.h"/>
+  <Extern href="vsshlids.h"/>
+  <Include href="KnownImageIds.vsct"/>
+  <Include href="VSGlobals.vsct"/>
+
+  <Commands package="VersionIncreaser">
+	  <Menus>
+		  <Menu guid="VersionIncreaser"  id="ToolbarID" priority="0x0000" type="ToolWindowToolbar ">
+			  <Parent guid="VersionIncreaser" id="ToolbarID"/>
+			  <Strings>
+				  <ButtonText>Tool Window Toolbar</ButtonText>
+				  <CommandName>Tool Window Toolbar</CommandName>
+			  </Strings>
+		  </Menu>
+	  </Menus>
+
+	  <Groups>
+		  <!-- Group for Tool Wimdow Toolbar -->
+		  <Group guid="VersionIncreaser"  id="ToolbarGroupID" priority="0x0000">
+			  <Parent guid="VersionIncreaser" id="ToolbarID"/>			  
+		  </Group>
+		  
+		  <!-- Group for Context Menu -->
+		  <Group guid="VersionIncreaser" id="ContextMenuGroupID" priority="0x1000" >
+			  <Parent guid="VSMainMenu" id="ProjectNode"/>
+		  </Group>
+	  </Groups>
+	  
+    <!--This section defines the elements the user can interact with, like a menu command or a button or combo box in a toolbar. -->
+    <Buttons>
+      <Button guid="VersionIncreaser" id="MyCommand" priority="0x0100" type="Button">
+        <!--
+		  <Parent guid="VSMainMenu" id="View.DevWindowsGroup.OtherWindows.Group1"/>
+		-->
+		<Parent guid="VersionIncreaser" id="ContextMenuGroupID"/>
+        <Icon guid="ImageCatalogGuid" id="VersionInformation" />
+        <CommandFlag>IconIsMoniker</CommandFlag>
+        <Strings>
+          <ButtonText>.NET MAUI Version Increaser</ButtonText>
+          <LocCanonicalName>.View.MyToolWindow</LocCanonicalName>
+        </Strings>
+      </Button>
+
+		<Button guid="VersionIncreaser" id="cmdidWindowsMediaOpen" priority="0x0101" type="Button">
+			<Parent guid="VersionIncreaser" id="ToolbarGroupID"/>
+			<Icon guid="ImageCatalogGuid" id="Search"/>
+			<Strings>
+				<CommandName>cmdidWindowsMediaOpen</CommandName>
+				<ButtonText>Load File</ButtonText>
+			</Strings>
+		</Button>
+    </Buttons>
+  </Commands>
+
+  <Symbols>
+    <GuidSymbol name="VersionIncreaser" value="{0b317ed6-b308-47d4-b6f0-4b478b06f147}">
+      <IDSymbol name="MyCommand" value="0x0100" />
+
+		<IDSymbol name="ToolbarID" value="0x1000"/>
+		<IDSymbol name="ToolbarGroupID" value="0x1001"/>
+
+		<IDSymbol name="ContextMenuGroupID" value="0x0200"/>
+
+		<IDSymbol name="cmdidWindowsMedia" value="0x0100"/>
+		<IDSymbol name="cmdidWindowsMediaOpen" value="0x0132"/>
+    </GuidSymbol>
+  </Symbols>
+</CommandTable>
