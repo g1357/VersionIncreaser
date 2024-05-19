@@ -14,7 +14,7 @@ namespace VersionIncreaser
         Window = "0")]
     [ProvideMenuResource("Menus.ctmenu", 1)]
     [Guid(PackageGuids.VersionIncreaserString)]
-    public sealed class FirstTooWinComPackage : ToolkitPackage
+    public sealed class VersionIncreaserPackage : ToolkitPackage
     {
         protected override async Task InitializeAsync(CancellationToken cancellationToken, IProgress<ServiceProgressData> progress)
         {

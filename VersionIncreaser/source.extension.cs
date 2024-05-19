@@ -11,8 +11,8 @@ namespace VersionIncreaser
         public const string Name = "VersionIncreaser";
         public const string Description = @".NET MAUI Version Increaser before publishing to appstore.";
         public const string Language = "en-US";
-        public const string Version = "1.0";
+        public const string Version = "1.1";
         public const string Author = "GBD";
-        public const string Tags = "";
+        public const string Tags = "Version";
     }
 }

@@ -438,7 +438,7 @@ namespace VersionIncreaser.ToolWindows
             ChangedProp.Add(nameof(AndroidPkgFormatDbg), false);
             ChangedProp.Add(nameof(AndroidPkgFormatRls), false);
 
-            dte = FirstTooWinComPackage.GetGlobalService(typeof(EnvDTE.DTE)) as DTE2;
+            dte = VersionIncreaserPackage.GetGlobalService(typeof(EnvDTE.DTE)) as DTE2;
             Assumes.Present(dte);
             var selectedItem = dte.SelectedItems.Item(1);
             var selectedProject = selectedItem.Project;
